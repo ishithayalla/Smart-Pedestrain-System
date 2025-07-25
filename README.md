@@ -83,9 +83,3 @@ The system:
 * 📷 Add support for real-time webcam-based detection.
 
 ---
-
-## 📌 **Project Title (For Resume)**
-
-> **Smart Pedestrian and Vehicle Detection using Deep Learning and OpenCV**
-
----

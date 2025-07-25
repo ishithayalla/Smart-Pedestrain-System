@@ -1,76 +1,91 @@
-**Smart Pedestrian and Vehicle Detection System 🚦🚶‍♂️🚗**
+# 🚦 Smart Pedestrian and Vehicle Detection System
 
+This project uses a **pre-trained MobileNet-SSD model** to detect **persons** and **vehicles** in a video and simulate a smart signaling system (like traffic lights) based on majority detection.
 
-This project uses MobileNet-SSD, a pre-trained deep learning model, to detect persons and vehicles in a video and simulate a smart signaling system (like traffic lights) based on majority detection.
+---
 
-📌 Overview
+## 📌 **Overview**
+
 The system:
 
-Takes a video input.
+* Takes a video input.
+* Detects objects frame-by-frame using **MobileNet-SSD**.
+* Counts the number of **persons** and **vehicles** in each frame.
+* Displays a 🟢 **green**, 🔴 **red**, or 🟡 **yellow** circle to simulate a **traffic signal** based on which group is in majority.
+* Generates an output video with **bounding boxes**, **labels**, and **signal indicators**.
 
-Detects objects frame-by-frame using MobileNet-SSD.
+---
 
-Counts the number of persons and vehicles in each frame.
+## 🧠 **Features**
 
-Displays a green, red, or yellow circle to simulate a traffic signal based on which group is in majority.
+* 🎯 **Real-time object detection** using OpenCV's DNN module.
+* ⚡ **Fast inference** using MobileNet-SSD (Caffe model).
+* 🔁 **Simple decision-making logic** to simulate smart signal control.
+* 🖼️ **Visual overlays**: bounding boxes, labels, and traffic-like signal circles.
 
-Generates an output video with bounding boxes, labels, and signal indicators.
+---
 
-🧠 Features
-Real-time object detection using OpenCV DNN module.
+## 🛠️ **Technologies Used**
 
-Pre-trained model (MobileNetSSD) for fast and lightweight inference.
+* `Python`
+* `OpenCV`
+* `MobileNet-SSD (Caffe Model)`
+* `Google Colab` (for demonstration & execution)
 
-Simple decision-making logic to simulate smart signal control.
+---
 
-Colored indicator and message overlay for better visualization.
+## 📽️ **How It Works**
 
-🛠️ Technologies Used
-Python
+1. Upload a video file via **Google Colab**.
+2. The script processes **every alternate frame**:
 
-OpenCV
+   * Detects objects like `person`, `car`, `bus`, `motorbike`, etc.
+   * Counts detected **persons** and **vehicles**.
+   * Adds **bounding boxes** and **confidence scores**.
+   * Displays **signal indicator** (🟢 / 🔴 / 🟡) based on counts.
+3. Saves and allows download of the **output video**.
 
-MobileNet-SSD (Caffe model)
+---
 
-Google Colab (for demo and execution)
+## 📁 **Project Files**
 
-📽️ How It Works
-Upload a video file via Colab.
+* `MobileNetSSD_deploy.prototxt` – Model configuration file
+* `MobileNetSSD_deploy.caffemodel` – Pre-trained weights
+* `output_video_with_signal.mp4` – Final processed video with detection and signal overlay
 
-The script processes every alternate frame:
+---
 
-Detects objects like person, car, bus, motorbike, etc.
+## 🖼️ **Output Behavior**
 
-Counts detected persons and vehicles.
+> 🟢 **More persons** → "All clear!"
+> 🔴 **More vehicles** → "Stay safe!"
+> 🟡 **Equal** → "Proceed with caution!"
 
-Adds bounding boxes and confidence scores.
+---
 
-Displays signal indicator (green/red/yellow) based on counts.
+## 🚀 **Run on Google Colab**
 
-Saves and downloads the processed output video.
+1. Upload your video in `.mp4` format.
+2. Run all the notebook cells:
 
-📁 Files
-MobileNetSSD_deploy.prototxt – Model configuration file.
+   * 📥 Download and load model
+   * 🧠 Perform detection
+   * 🎞️ Save and download output video
+3. View or share your **smart detection video**.
 
-MobileNetSSD_deploy.caffemodel – Pre-trained weights.
+---
 
-output_video_with_signal.mp4 – Resulting video with detections and signal logic.
+## 📈 **Possible Future Enhancements**
 
-🖼️ Example Output
-🟢 More persons → All clear!
-🔴 More vehicles → Stay safe!
-🟡 Equal → Proceed with caution!
+* 🔄 Switch to `YOLOv8` or TensorFlow Lite for faster and more accurate detection.
+* 🧾 Log detection data to a `.csv` file for analysis.
+* 📊 Build a simple dashboard to visualize detection stats.
+* 📷 Add support for real-time webcam-based detection.
 
-🚀 Run It on Google Colab
-Upload your video.
+---
 
-Run the notebook cells (model download, processing, and download output).
+## 📌 **Project Title (For Resume)**
 
-View or share the generated video.
+> **Smart Pedestrian and Vehicle Detection using Deep Learning and OpenCV**
 
-📈 Possible Extensions
-Switch to YOLOv8 or SSD with TensorFlow Lite for improved performance.
-
-Add a dashboard or logging system to track detection statistics.
-
-Implement real-time webcam-based detection.
+---

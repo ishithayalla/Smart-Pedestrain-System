@@ -1,4 +1,6 @@
 **Smart Pedestrian and Vehicle Detection System 🚦🚶‍♂️🚗**
+
+
 This project uses MobileNet-SSD, a pre-trained deep learning model, to detect persons and vehicles in a video and simulate a smart signaling system (like traffic lights) based on majority detection.
 
 📌 Overview
